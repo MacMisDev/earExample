@@ -3,8 +3,11 @@
 # Maven
 target/
 bankerCalc/target/
-bankerCalc/out
+bankerCalc/out/
 bankerCalc/.idea/
+arithmeticCalc/target/
+arithmeticCalc/out/
+arithmeticCalc/.idea/
 ear/.idea/
 ear/target/
 restDemo/.idea/

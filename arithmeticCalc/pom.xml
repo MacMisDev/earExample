@@ -5,14 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.edu.ug.inf</groupId>
-    <artifactId>jvmProject</artifactId>
+    <artifactId>arithmeticCalc</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
 
-    <modules>
-        <module>bankerCalc</module>
-        <module>arithmeticCalc</module>
-        <module>ear</module>
-        <module>restDemo</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+
 </project>
