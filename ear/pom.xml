@@ -8,11 +8,6 @@
     <version>1.0</version>
     <packaging>ear</packaging>
 
-    <!-- The absolute path to the Glassfish Server, please change this... -->
-    <properties>
-        <glassfish.directory>C:\glassfish4</glassfish.directory>
-    </properties>
-
     <dependencies>
 
         <dependency>
@@ -61,48 +56,6 @@
 
                 </configuration>
             </plugin>
-
-            <!-- Glassfish App Server -->
-          <!--  <plugin>
-                <groupId>org.glassfish.maven.plugin</groupId>
-                <artifactId>maven-glassfish-plugin</artifactId>
-                <version>2.1</version>
-                <executions>
-                    <execution>
-                        <id>gf-undeploy</id>
-                        <goals>
-                            <goal>undeploy</goal>
-                        </goals>
-                        <phase>clean</phase>
-                    </execution>
-                    <execution>
-                        <id>gf-deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                        <phase>package</phase>
-                    </execution>
-                </executions>
-                <configuration>
-                    <user>admin</user>
-                    <glassfishDirectory>${glassfish.directory}</glassfishDirectory>
-                    <domainDirectory>${glassfish.directory}/glassfish/domains/</domainDirectory>
-                    <passwordFile>${glassfish.directory}\glassfishpasswordfile.txt</passwordFile>
-                    <domain>
-                        <name>domain1</name>
-                        <adminPort>4848</adminPort>
-                        <httpPort>8080</httpPort>
-                        <httpsPort>8443</httpsPort>
-                    </domain>
-                    <components>
-                        <component>
-                            <name>jvmProject</name>
-                            <artifact>target/ear_project-1.0.ear</artifact>
-                        </component>
-                    </components>
-                </configuration>
-            </plugin>-->
-
         </plugins>
     </build>
 </project>
