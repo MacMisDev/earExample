@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ear_project</artifactId>
+    <version>1.0</version>
+    <packaging>ear</packaging>
+
+    <!-- The absolute path to the Glassfish Server, please change this... -->
+    <properties>
+        <glassfish.directory>C:\glassfish4</glassfish.directory>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>pl.edu.ug.inf</groupId>
+            <artifactId>bankerCalc</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>pl.edu.ug.inf</groupId>
+            <artifactId>restDemo</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+
+    </dependencies>
+
+    <parent>
+        <groupId>pl.edu.ug.inf</groupId>
+        <artifactId>jvmProject</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <modules>
+                        <webModule>
+                            <groupId>pl.edu.ug.inf</groupId>
+                            <artifactId>restDemo</artifactId>
+                            <bundleFileName>restDemo.war</bundleFileName>
+                            <contextRoot>/restDemo</contextRoot>
+                        </webModule>
+                        <jarModule>
+                            <groupId>pl.edu.ug.inf</groupId>
+                            <artifactId>bankerCalc</artifactId>
+                        </jarModule>
+                    </modules>
+                    <version>6</version>
+                    <generateApplicationXml>true</generateApplicationXml>
+
+                </configuration>
+            </plugin>
+
+            <!-- Glassfish App Server -->
+          <!--  <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>gf-undeploy</id>
+                        <goals>
+                            <goal>undeploy</goal>
+                        </goals>
+                        <phase>clean</phase>
+                    </execution>
+                    <execution>
+                        <id>gf-deploy</id>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <user>admin</user>
+                    <glassfishDirectory>${glassfish.directory}</glassfishDirectory>
+                    <domainDirectory>${glassfish.directory}/glassfish/domains/</domainDirectory>
+                    <passwordFile>${glassfish.directory}\glassfishpasswordfile.txt</passwordFile>
+                    <domain>
+                        <name>domain1</name>
+                        <adminPort>4848</adminPort>
+                        <httpPort>8080</httpPort>
+                        <httpsPort>8443</httpsPort>
+                    </domain>
+                    <components>
+                        <component>
+                            <name>jvmProject</name>
+                            <artifact>target/ear_project-1.0.ear</artifact>
+                        </component>
+                    </components>
+                </configuration>
+            </plugin>-->
+
+        </plugins>
+    </build>
+</project>
