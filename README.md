@@ -31,3 +31,14 @@ Budujemy projekt poleceniem `mvn package`. Powinniśmy otrzymać komunikat:
 ```
 Oznacza to, iż projekt został zbudowany bez problemów.
 W folderze `ear\target\` będzie znajdował się plik `ear_project-1.0.ear`, który należy umieścić na serwerze. Ja do tego zadania wybrałem `WebLogic Server 12.1.3.0`. Po przebrnięciu przez instalację, należy uruchomić domenę oraz przejść do konsoli admina (domyślnie `http://localhost:7001/console/`). Tam instalujemy naszego .ear'a zgodnie z instrukcją. Po zakończeniu pod adresem `http://localhost:7001/restDemo/` powinna znajdować się aplikacja.
+
+Drzewko pliku .ear
+```bash
+|   bankerCalc-1.0.jar
+|   hamcrest-core-1.3.jar
+|   junit-4.12.jar
+|   restDemo.war
+|
+\---META-INF
+        application.xml
+```
